@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 module Language.Dot.Pretty
   ( prettyPrintDot
   , renderDot
@@ -7,6 +8,9 @@ module Language.Dot.Pretty
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
+#if MIN_VERSION_base(4,11,0)
+import Prelude hiding ((<>))
+#endif
 import Numeric
 import Text.PrettyPrint
 
